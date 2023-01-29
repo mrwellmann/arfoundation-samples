@@ -132,7 +132,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Camera/BackgroundRenderOrder/BackgroundRenderOrder.unity
     guid: dd6d3723894ae4618b821f1e99d0a4c7
   - enabled: 1
-    path: Assets/Scenes/Samaritan/Samaritan.unity
+    path: Assets/Samaritan/Scenes/Main/Samaritan.unity
     guid: 710411d8a1d39934eb47a35f603d6e5a
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: c52d3bb36b4c86f47af54ab9c7a02589,
