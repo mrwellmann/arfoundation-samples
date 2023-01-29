@@ -28,28 +28,29 @@ public class IndicatorTargetCamera : MonoBehaviour
     private GameObject targetCamGO;
     private GameObject targetCameraIndicator;
 
-    void Awake()
+    private void Awake()
     {
         //  Find and assin references
         ITarget = GetComponent<IndicatorTarget>();
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    private void Start()
     {
         //  Set-up targetCamImage
         StartCoroutine(CoCreateTargetCamera());
     }
 
     //  Set active/inactive for target camera & the target camera indicator when script is enabled/disabled
-    void OnEnable()
+    private void OnEnable()
     {
         if (targetCameraIndicator != null)
             targetCameraIndicator.SetActive(true);
         if (targetCamGO != null)
             targetCamGO.SetActive(true);
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         if (targetCameraIndicator != null)
             targetCameraIndicator.SetActive(false);
@@ -57,7 +58,7 @@ public class IndicatorTargetCamera : MonoBehaviour
             targetCamGO.SetActive(false);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (IPanel != null && targetCamGO != null)
         {
@@ -77,12 +78,13 @@ public class IndicatorTargetCamera : MonoBehaviour
                 targetCamGO.transform.position = CameraPositionOffset + transform.position;
                 targetCamGO.transform.rotation = Quaternion.Euler(CameraRotationOffset.x, CameraRotationOffset.y, CameraRotationOffset.z);
                 targetCameraIndicator.transform.rotation = Quaternion.identity;
-            } 
+            }
         }
     }
 
     #region IEnumerator that checks for a indicator panel that may not have been created yet thus we need to keep checking till it exist.
-    IEnumerator CoCreateTargetCamera()
+
+    private IEnumerator CoCreateTargetCamera()
     {
         IPanel = ITarget.IndicatorPanel;
 
@@ -95,10 +97,12 @@ public class IndicatorTargetCamera : MonoBehaviour
         //  Now that the indicator panel exist, create the camera
         CreateTargetCamera();
     }
-    #endregion
+
+    #endregion IEnumerator that checks for a indicator panel that may not have been created yet thus we need to keep checking till it exist.
 
     #region Create the target camera and indicator camera
-    //  Creates the target camera, target's RenderTexture, and set-up UI stuff 
+
+    //  Creates the target camera, target's RenderTexture, and set-up UI stuff
     private void CreateTargetCamera()
     {
         //  1. Create empty gameobject to hold the camera
@@ -134,5 +138,6 @@ public class IndicatorTargetCamera : MonoBehaviour
         targetCamera.backgroundColor = Color.clear;
         targetCamera.targetTexture = renderTexture;
     }
-    #endregion
+
+    #endregion Create the target camera and indicator camera
 }

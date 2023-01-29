@@ -52,6 +52,7 @@ public class IndicatorViewer : MonoBehaviour
     public Transitions OnScreenDisableTransition = Transitions.Scale;
     public Transitions OffScreenEnableTransition = Transitions.Scale;
     public Transitions OffScreenDisableTransition = Transitions.Scale;
+
     public enum Transitions
     { None, Slide, Fade, Rotate, RotateReverse, Scale }
 
@@ -64,7 +65,7 @@ public class IndicatorViewer : MonoBehaviour
     public static List<IndicatorTarget> Targets = new List<IndicatorTarget>();
     private WaitForSeconds waitInterval = null;
 
-    void Awake()
+    private void Awake()
     {
         //  If no custom camera is assigned, use main camera
         if (ViewerCamera == null)
@@ -81,7 +82,7 @@ public class IndicatorViewer : MonoBehaviour
         waitInterval = new WaitForSeconds(UpdateInterval);
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (UpdateEveryFrame)
         {
@@ -94,7 +95,7 @@ public class IndicatorViewer : MonoBehaviour
         }
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         if (UpdateEveryFrame)
         {
@@ -120,7 +121,8 @@ public class IndicatorViewer : MonoBehaviour
     }
 
     #region Updates each indicator in the Targets list on a delay interval instad of every frame. (adjustable performance)
-    IEnumerator UpdateIndicators()
+
+    private IEnumerator UpdateIndicators()
     {
         //  Using while loop with delay
         while (true)
@@ -140,9 +142,11 @@ public class IndicatorViewer : MonoBehaviour
             yield return waitInterval;
         }
     }
-    #endregion
+
+    #endregion Updates each indicator in the Targets list on a delay interval instad of every frame. (adjustable performance)
 
     #region Create the indicator canvas
+
     //  Create a default canvas for the indicator panels and set parameters.
     private void CreateIndicatorCanvas()
     {
@@ -166,9 +170,11 @@ public class IndicatorViewer : MonoBehaviour
         cs.matchWidthOrHeight = 0.5f;
         indicatorCanvas.AddComponent<GraphicRaycaster>();
     }
-    #endregion
+
+    #endregion Create the indicator canvas
 
     #region public set/get methods
+
     //  Tracks target; add a IndicatorTarget component to the target if it doesn't already exist and add to tracking list.
     public static void TrackTarget(GameObject target)
     {
@@ -232,5 +238,6 @@ public class IndicatorViewer : MonoBehaviour
 
     public GameObject IndicatorCanvas
     { get { return indicatorCanvas; } }
-    #endregion
+
+    #endregion public set/get methods
 }
