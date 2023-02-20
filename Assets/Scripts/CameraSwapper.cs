@@ -17,7 +17,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         ARCameraManager m_CameraManager;
 
         /// <summary>
-        /// On button press callback to toggle the requested camera facing direction.
+        /// On button press callback to _toggle the requested camera facing direction.
         /// </summary>
         public void OnSwapCameraButtonPress()
         {

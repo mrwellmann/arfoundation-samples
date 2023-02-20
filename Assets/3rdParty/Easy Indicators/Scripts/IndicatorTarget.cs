@@ -111,7 +111,7 @@ public class IndicatorTarget : MonoBehaviour
             if (!IndicatorViewer.Targets.Contains(this))
                 IndicatorViewer.Targets.Add(this);
 
-            //  initial indicator toggle
+            //  initial indicator _toggle
             if (OnScreen(viewer.ViewerCamera.WorldToScreenPoint(transform.position), viewer.ViewerCamera))
             {
                 if (IPanel.OnScreen != null)

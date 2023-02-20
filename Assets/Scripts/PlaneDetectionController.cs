@@ -6,7 +6,7 @@ using UnityEngine.XR.ARFoundation;
 namespace UnityEngine.XR.ARFoundation.Samples
 {
     /// <summary>
-    /// This example demonstrates how to toggle plane detection,
+    /// This example demonstrates how to _toggle plane detection,
     /// and also hide or show the existing planes.
     /// </summary>
     [RequireComponent(typeof(ARPlaneManager))]

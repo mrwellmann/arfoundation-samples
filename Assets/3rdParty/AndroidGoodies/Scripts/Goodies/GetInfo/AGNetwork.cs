@@ -387,7 +387,7 @@ namespace DeadMosquito.AndroidGoodies
 
 		/// <summary>
 		/// Enable or disable Wi-Fi.
-		/// Applications must have the Manifest.permission.CHANGE_WIFI_STATE permission to toggle wifi.
+		/// Applications must have the Manifest.permission.CHANGE_WIFI_STATE permission to _toggle wifi.
 		/// </summary>
 		[PublicAPI]
 		public static void SetWifiEnabled(bool isEnabled)

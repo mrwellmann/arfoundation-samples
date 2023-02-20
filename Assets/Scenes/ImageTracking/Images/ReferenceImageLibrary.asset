@@ -47,3 +47,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: QRCode
     m_Texture: {fileID: 2800000, guid: a6fd8503774c0402aa403884f5b77f39, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5072198361263557606
+      m_GuidHigh: 1996665900564939158
+    m_SerializedTextureGuid:
+      m_GuidLow: 15980160260399306040
+      m_GuidHigh: 1747322555969025448
+    m_Size: {x: 0.27, y: 0.19108962}
+    m_SpecifySize: 1
+    m_Name: SpizbergenFarView
+    m_Texture: {fileID: 2800000, guid: 1eea1538ef17ddc4a8b58f609bbc3f18, type: 3}
