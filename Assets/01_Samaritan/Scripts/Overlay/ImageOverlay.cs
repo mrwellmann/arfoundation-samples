@@ -1,11 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+
+public enum OverlayType
+{
+    Overlay1,
+    Overlay2,
+    Overlay3
+}
+
+public enum OverlayYear
+{
+    None,
+    Y2012,
+    Y2022
+}
 
 public class ImageOverlay : MonoBehaviour
 {
-    public Image overlayImage;
+    [FormerlySerializedAs("overlayImage")]
+    public Image OverlayImage;
+    public OverlayType CurrentOverlayType;
+    public OverlayYear CurrentOverlayYear;
     public bool fade;
     public bool fill;
 
@@ -24,16 +42,16 @@ public class ImageOverlay : MonoBehaviour
             if (touchZero.position.y != 0)
                 yPosRelativeToScreenSzize = touchZero.position.y / Screen.height;
 
-            if (overlayImage != null)
+            if (OverlayImage != null)
             {
                 if (fill)
-                    overlayImage.fillAmount = yPosRelativeToScreenSzize;
+                    OverlayImage.fillAmount = yPosRelativeToScreenSzize;
                 else
-                    overlayImage.fillAmount = 1;
+                    OverlayImage.fillAmount = 1;
                 if (fade)
-                    overlayImage.color = new Color(overlayImage.color.r, overlayImage.color.g, overlayImage.color.b, yPosRelativeToScreenSzize);
+                    OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, yPosRelativeToScreenSzize);
                 else
-                    overlayImage.color = new Color(overlayImage.color.r, overlayImage.color.g, overlayImage.color.b, 1);
+                    OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, 1);
             }
 
             Debug.Log("yPosRelativeToScreenSzize: " + yPosRelativeToScreenSzize);

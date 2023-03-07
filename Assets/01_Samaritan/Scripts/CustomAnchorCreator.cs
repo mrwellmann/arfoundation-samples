@@ -46,7 +46,12 @@ namespace UnityEngine.XR.ARFoundation.Samples
         {
             var moveabelOverlay = m_Anchor.gameObject.GetComponentInChildren<MoveabelOverlay>();
             if (moveabelOverlay != null)
-                moveabelOverlay.SetPositionZPow2 = sliderValue;
+            {
+                Vector3 cameraForward = Camera.main.transform.forward;
+                moveabelOverlay.transform.Translate(cameraForward * sliderValue * Time.deltaTime);
+                //moveabelOverlay.SetPositionZPow2 = sliderValue;
+            }
+                
         }
 
         public void SetScaleLastAnchor(float sliderValue)
