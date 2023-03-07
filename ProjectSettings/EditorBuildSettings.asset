@@ -137,6 +137,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Samaritan/Scenes/Image/Samaritan Image.unity
     guid: 283e9e68ad35036449cc7f4904d2b7f9
+  - enabled: 1
+    path: Assets/01_Samaritan/Scenes/AnchorsCustom/AnchorsCustom.unity
+    guid: 7f00fc6ea87c61745995cf5b2814f99a
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: c52d3bb36b4c86f47af54ab9c7a02589,
       type: 2}

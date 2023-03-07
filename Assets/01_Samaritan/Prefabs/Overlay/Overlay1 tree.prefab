@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 7973726172271466148}
   - component: {fileID: 6733400438428605907}
   m_Layer: 0
-  m_Name: Overlay1
+  m_Name: Overlay1 tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
