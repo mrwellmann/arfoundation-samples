@@ -8,7 +8,8 @@ public enum OverlayType
 {
     Overlay1,
     Overlay2,
-    Overlay3
+    Overlay3,
+    Background
 }
 
 public enum OverlayYear
@@ -23,7 +24,7 @@ public class ImageOverlay : MonoBehaviour
     [FormerlySerializedAs("overlayImage")]
     public Image OverlayImage;
     public OverlayType CurrentOverlayType;
-    public OverlayYear CurrentOverlayYear;
+    public OverlayYear SetOverlayYear;
     public bool fade;
     public bool fill;
 
@@ -35,28 +36,29 @@ public class ImageOverlay : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            var touchZero = Input.GetTouch(0);
-            float yPosRelativeToScreenSzize = 0;
-            if (touchZero.position.y != 0)
-                yPosRelativeToScreenSzize = touchZero.position.y / Screen.height;
+        //modify fill / alpha with touch
+        //if (Input.touchCount > 0)
+        //{
+        //    var touchZero = Input.GetTouch(0);
+        //    float yPosRelativeToScreenSzize = 0;
+        //    if (touchZero.position.y != 0)
+        //        yPosRelativeToScreenSzize = touchZero.position.y / Screen.height;
 
-            if (OverlayImage != null)
-            {
-                if (fill)
-                    OverlayImage.fillAmount = yPosRelativeToScreenSzize;
-                else
-                    OverlayImage.fillAmount = 1;
-                if (fade)
-                    OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, yPosRelativeToScreenSzize);
-                else
-                    OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, 1);
-            }
+        //    if (OverlayImage != null)
+        //    {
+        //        if (fill)
+        //            OverlayImage.fillAmount = yPosRelativeToScreenSzize;
+        //        else
+        //            OverlayImage.fillAmount = 1;
+        //        if (fade)
+        //            OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, yPosRelativeToScreenSzize);
+        //        else
+        //            OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, 1);
+        //    }
 
-            Debug.Log("yPosRelativeToScreenSzize: " + yPosRelativeToScreenSzize);
-            Debug.Log("touchZero: " + touchZero.position);
-        }
+        //    Debug.Log("yPosRelativeToScreenSzize: " + yPosRelativeToScreenSzize);
+        //    Debug.Log("touchZero: " + touchZero.position);
+        //}
     }
 
     public void UseFade(bool isOn)

@@ -42,25 +42,6 @@ namespace UnityEngine.XR.ARFoundation.Samples
             }
         }
 
-        public void SetDistanceLastAnchor(float sliderValue)
-        {
-            var moveabelOverlay = m_Anchor.gameObject.GetComponentInChildren<MoveabelOverlay>();
-            if (moveabelOverlay != null)
-            {
-                Vector3 cameraForward = Camera.main.transform.forward;
-                moveabelOverlay.transform.Translate(cameraForward * sliderValue * Time.deltaTime);
-                //moveabelOverlay.SetPositionZPow2 = sliderValue;
-            }
-                
-        }
-
-        public void SetScaleLastAnchor(float sliderValue)
-        {
-            var moveabelOverlay = m_Anchor.gameObject.GetComponentInChildren<MoveabelOverlay>();
-            if (moveabelOverlay != null)
-                moveabelOverlay.SetScalePow2 = sliderValue;
-        }
-
         public void Deactivate(bool deactivate)
         {
             this.enabled = !deactivate;
@@ -90,7 +71,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         private ARAnchor CreateAnchor(in ARRaycastHit hit)
         {
-            ARAnchor anchor = null;
+            ARAnchor anchor;
 
             // If we hit a plane, try to "attach" the anchor to the plane
             if (hit.trackable is ARPlane plane)

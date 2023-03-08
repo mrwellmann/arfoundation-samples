@@ -7,9 +7,9 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Toggle))]
 public class OverlaySwitcher : MonoBehaviour
 {
-    public OverlayType ConnectedOverlayType;
+    public OverlayType CurrentOverlayType;
     public OverlayYear ConnectedOverlayYear;
-    private Toggle toggle;
+    public Toggle toggle;
 
     private void Start()
     {
@@ -25,22 +25,10 @@ public class OverlaySwitcher : MonoBehaviour
         var overlays = FindObjectsOfType<ImageOverlay>(true);
         foreach (var overlay in overlays)
         {
-            if (overlay.CurrentOverlayYear == ConnectedOverlayYear &&
-                overlay.CurrentOverlayType == ConnectedOverlayType)
+            if (overlay.SetOverlayYear == ConnectedOverlayYear &&
+                overlay.CurrentOverlayType == CurrentOverlayType)
             {
                 overlay.gameObject.SetActive(isOn);
-            }
-        }
-    }
-
-    internal void DeactivateCurentOverlays()
-    {
-        var overlays = FindObjectsOfType<ImageOverlay>(true);
-        foreach (var overlay in overlays)
-        {
-            if (overlay.CurrentOverlayYear == ConnectedOverlayYear)
-            {
-                overlay.gameObject.SetActive(false);
             }
         }
     }

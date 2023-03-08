@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1229956730}
   - component: {fileID: 1229956731}
+  - component: {fileID: 6329477090074286406}
   m_Layer: 0
   m_Name: Movable Overlay
   m_TagString: Untagged
@@ -46,6 +47,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15b3a08491ce0445823e45b6449fe44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6329477090074286406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229956729}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de7f210f8f939e49ba12df490b33864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraint: 0
+  _invert: 0
+  _dampening: 0.75
+  _target: {fileID: 0}
 --- !u!1 &2482620201629940151
 GameObject:
   m_ObjectHideFlags: 0
