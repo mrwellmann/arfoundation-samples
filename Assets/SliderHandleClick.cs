@@ -22,6 +22,7 @@ public class SliderHandleClick : MonoBehaviour, IPointerDownHandler, IPointerUpH
         if (eventData.pointerCurrentRaycast.gameObject == slider.handleRect.gameObject)
         {
             silderHandelDown = false;
+            slider.value = 0;
         }
     }
 

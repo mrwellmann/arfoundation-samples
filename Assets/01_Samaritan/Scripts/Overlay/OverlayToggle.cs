@@ -69,4 +69,31 @@ public class OverlayToggle : MonoBehaviour
             switcher.CurrentOverlayType = overlayType;
         }
     }
+
+    public void InitOverlaySettings()
+    {
+        var overlays = FindObjectsOfType<ImageOverlay>(true);
+        var switchers = FindObjectsOfType<OverlaySwitcher>();
+
+        foreach (var overlay in overlays)
+        {
+            if (overlay.CurrentOverlayType == OverlayType)
+            {
+                if (overlay.CurrentOverlayType == OverlayType.Background)
+                {
+                    overlay.gameObject.SetActive(GetComponent<Toggle>().isOn);
+                    continue;
+                }
+
+                foreach (var switcher in switchers)
+                {
+                    if (overlay.SetOverlayYear == switcher.ConnectedOverlayYear)
+                    {
+                        bool activate = GetComponent<Toggle>().isOn && switcher.toggle.isOn;
+                        overlay.gameObject.SetActive(activate);
+                    }
+                }
+            }
+        }
+    }
 }

@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 764084864}
   - component: {fileID: 764084863}
   - component: {fileID: 764084862}
-  - component: {fileID: 1514613092}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -189,18 +188,6 @@ MonoBehaviour:
   SetOverlayYear: 0
   fade: 0
   fill: 0
---- !u!114 &1514613092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764084860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a6efbf49254ec945ae3eccaf03dd86c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1253971972
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +613,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Overlay1 frame12
       objectReference: {fileID: 0}
+    - target: {fileID: 3179111654457754616, guid: e417218eb55f97743a610b81f04dc7d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4428400111404668296, guid: e417218eb55f97743a610b81f04dc7d7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -729,17 +721,17 @@ PrefabInstance:
     - target: {fileID: 7973726172271466148, guid: e417218eb55f97743a610b81f04dc7d7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7973726172271466148, guid: e417218eb55f97743a610b81f04dc7d7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7973726172271466148, guid: e417218eb55f97743a610b81f04dc7d7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7973726172271466148, guid: e417218eb55f97743a610b81f04dc7d7,
         type: 3}
@@ -766,7 +758,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6733400438428605907, guid: e417218eb55f97743a610b81f04dc7d7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7973726172271466148, guid: e417218eb55f97743a610b81f04dc7d7,
@@ -793,15 +786,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 527422356}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3179111654457754616, guid: e417218eb55f97743a610b81f04dc7d7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 473543579}
-    - targetCorrespondingSourceObject: {fileID: 3179111654457754616, guid: e417218eb55f97743a610b81f04dc7d7,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 473543578}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e417218eb55f97743a610b81f04dc7d7, type: 3}
 --- !u!224 &1683829559889268908 stripped
 RectTransform:
@@ -809,49 +794,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8788343274386048520}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6190213707926799856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3179111654457754616, guid: e417218eb55f97743a610b81f04dc7d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8788343274386048520}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &473543579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190213707926799856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 10000
-  m_PresetInfoIsWorld: 1
---- !u!114 &473543578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6190213707926799856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
