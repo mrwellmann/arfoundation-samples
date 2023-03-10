@@ -20,7 +20,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         private static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
-        public ARAnchor m_Anchor = null;
+        private ARAnchor m_Anchor = null;
         private List<ARAnchor> m_Anchors = new List<ARAnchor>();
 
         private ARRaycastManager m_RaycastManager;

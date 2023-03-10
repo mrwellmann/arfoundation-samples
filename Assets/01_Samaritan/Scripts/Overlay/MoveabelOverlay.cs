@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SampleLogger = UnityEngine.XR.ARFoundation.Samples.Logger;
 
 public class MoveabelOverlay : MonoBehaviour
 {
+    public static event Action<MoveabelOverlay> MoveabelOverlayCreated;
+
     private void Start()
     {
         var overlayDebugToggless = FindObjectsOfType<OverlayToggle>(true);
@@ -11,6 +15,9 @@ public class MoveabelOverlay : MonoBehaviour
         {
             toggles.InitOverlaySettings();
         }
+
+        MoveabelOverlayCreated?.Invoke(this);
+        SampleLogger.Log($"MoveabelOverlay created at Position {transform.position}, Rotation {transform.rotation.eulerAngles}, Scale {transform.localScale}.");
     }
 
     public float ChageDistanceToCamera
@@ -43,5 +50,20 @@ public class MoveabelOverlay : MonoBehaviour
             var newValue = gameObject.transform.localScale.x + value;
             gameObject.transform.localScale = new Vector3(newValue, newValue, newValue);
         }
+    }
+
+    public void Pitch(float value)
+    {
+        gameObject.transform.Rotate(new Vector3(value, 0, 0), Space.Self);
+    }
+
+    public void Yaw(float value)
+    {
+        gameObject.transform.Rotate(new Vector3(0, value, 0), Space.Self);
+    }
+
+    public void Role(float value)
+    {
+        gameObject.transform.Rotate(new Vector3(0, 0, value), Space.Self);
     }
 }
