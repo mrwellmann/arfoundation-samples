@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,9 +36,27 @@ public class OverlaySelection : MonoBehaviour
         MoveabelOverlay.MoveabelOverlayCreated += (moveabelOverlay) => { this.currentOverlay = moveabelOverlay; };
 
         transparencySlider.WhileSliderHandleDown += ChangeTransparency;
+        backGround1.onValueChanged.AddListener(SetBackground1);
+        backGround2.onValueChanged.AddListener(SetBackground2);
 
         SetDefaultBackground();
         SetDefaultOverlay();
+    }
+
+    private void SetBackground2(bool isOn)
+    {
+        if (currentOverlay != null)
+        {
+            currentOverlay.SetBackground2(isOn);
+        }
+    }
+
+    private void SetBackground1(bool isOn)
+    {
+        if (currentOverlay != null)
+        {
+            currentOverlay.SetBackground1(isOn);
+        }
     }
 
     private void UpdateValues()

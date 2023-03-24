@@ -1096,7 +1096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 150, y: 0}
   m_SizeDelta: {x: 270, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216666236
@@ -1742,6 +1742,7 @@ MonoBehaviour:
   mainControls: {fileID: 1653139941}
   overlaySelection: {fileID: 719056286}
   overlayPositioning: {fileID: 204180825}
+  customAnchorCreator: {fileID: 1860063806}
 --- !u!1 &390502206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,7 +3820,7 @@ MonoBehaviour:
   transparencySlider: {fileID: 2084215354}
   transparencySliderTextValue: {fileID: 2120868152}
   backGround1: {fileID: 170718893}
-  backGround2: {fileID: 170718893}
+  backGround2: {fileID: 60030341}
   overlay1: {fileID: 592215589}
   overlay2: {fileID: 1123053231}
   overlay3: {fileID: 356298252}
@@ -12650,6 +12651,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905135906}
   m_CullTransparentMesh: 0
+--- !u!1001 &1919119851
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 614262482384228576, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919204048782608814, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925073100152930880, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_Name
+      value: HorizontOverlay 3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 7131523550184694773, guid: 7202db6090ad41d44891ba48e7f4084d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7202db6090ad41d44891ba48e7f4084d, type: 3}
 --- !u!1 &1967640009
 GameObject:
   m_ObjectHideFlags: 0

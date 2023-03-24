@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using SampleLogger = UnityEngine.XR.ARFoundation.Samples.Logger;
 
 public class MoveabelOverlay : MonoBehaviour
@@ -9,9 +10,9 @@ public class MoveabelOverlay : MonoBehaviour
     public static event Action<MoveabelOverlay> MoveabelOverlayCreated;
 
     [SerializeField]
-    private GameObject Bachground1;
+    private GameObject Background1;
     [SerializeField]
-    private GameObject Bachground2;
+    private GameObject Background2;
 
     private float transparency = 80;
 
@@ -50,13 +51,16 @@ public class MoveabelOverlay : MonoBehaviour
         }
     }
 
-    public void MoveToPositionKeepDisctanceToCamera()
+    public void MoveToPositionKeepDisctanceToCamera(Transform objectToBeMoved = null)
     {
-        float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        transform.position = Camera.main.transform.position;
+        if (objectToBeMoved == null)
+            objectToBeMoved = transform;
 
-        float newDistance = Vector3.Distance(transform.position, Camera.main.transform.position);
-        transform.position += (distance - newDistance) * Camera.main.transform.forward;
+        float distance = Vector3.Distance(objectToBeMoved.position, Camera.main.transform.position);
+        objectToBeMoved.position = Camera.main.transform.position;
+
+        float newDistance = Vector3.Distance(objectToBeMoved.position, Camera.main.transform.position);
+        objectToBeMoved.position += (distance - newDistance) * Camera.main.transform.forward;
     }
 
     public float ChangeScale
@@ -105,11 +109,33 @@ public class MoveabelOverlay : MonoBehaviour
 
     public void SetBackground1(bool isOn)
     {
-        Bachground1.SetActive(true);
+        Background1.SetActive(isOn);
+        if (isOn)
+        {
+            CenterBackground(Background1.transform);
+            StartCoroutine(LookAt(Background1));
+        }
     }
 
     public void SetBackground2(bool isOn)
     {
-        Bachground2.SetActive(true);
+        Background2.SetActive(isOn);
+        if (isOn)
+        {
+            CenterBackground(Background2.transform);
+            StartCoroutine(LookAt(Background2));
+        }
+    }
+
+    private IEnumerator LookAt(GameObject background)
+    {
+        background.GetComponent<LookAt>().enabled = true;
+        yield return new WaitForSeconds(2f);
+        background.GetComponent<LookAt>().enabled = false;
+    }
+
+    private void CenterBackground(Transform background)
+    {
+        MoveToPositionKeepDisctanceToCamera(background);
     }
 }

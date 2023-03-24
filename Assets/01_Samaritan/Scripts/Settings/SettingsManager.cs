@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation.Samples;
 
 public class SettingsManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SettingsManager : MonoBehaviour
     [SerializeField]
     private OverlayPositioning overlayPositioning;
 
+    [SerializeField]
+    private CustomAnchorCreator customAnchorCreator;
+
     private void Start()
     {
         mainControls.gameObject.SetActive(true);
@@ -20,5 +24,7 @@ public class SettingsManager : MonoBehaviour
         mainControls.Init();
         overlaySelection.Init();
         overlayPositioning.Init();
+
+        customAnchorCreator.enabled = false;
     }
 }
