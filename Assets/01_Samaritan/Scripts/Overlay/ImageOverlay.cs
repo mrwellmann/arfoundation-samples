@@ -8,8 +8,7 @@ public enum OverlayType
 {
     Overlay1,
     Overlay2,
-    Overlay3,
-    Background
+    Overlay3
 }
 
 public enum OverlayYear
@@ -28,9 +27,42 @@ public class ImageOverlay : MonoBehaviour
     public bool fade;
     public bool fill;
 
-    // Start is called before the first frame update
-    private void Start()
+    public float Transparency
     {
+        get
+        {
+            float alpha = 0;
+            if (OverlayImage != null)
+            {
+                alpha = OverlayImage.color.a;
+            }
+            else
+            {
+                var material = GetComponentInChildren<Material>();
+                if (material != null)
+                {
+                    alpha = material.color.a;
+                }
+            }
+            return alpha;
+        }
+        set
+        {
+            if (OverlayImage != null)
+            {
+                OverlayImage.color = new Color(OverlayImage.color.r, OverlayImage.color.g, OverlayImage.color.b, value);
+                return;
+            }
+            var meshRenderer = GetComponentInChildren<MeshRenderer>();
+            if (meshRenderer.materials.Length > 0 && meshRenderer.materials[0] != null)
+            {
+                var material = meshRenderer.materials[0];
+                if (material != null)
+                {
+                    material.color = new Color(material.color.r, material.color.g, material.color.b, value);
+                }
+            }
+        }
     }
 
     // Update is called once per frame

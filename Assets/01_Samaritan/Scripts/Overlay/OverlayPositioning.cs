@@ -33,7 +33,12 @@ public class OverlayPositioning : MonoBehaviour
 
     private MoveabelOverlay currentOverlay = null;
 
-    private void Start()
+    private void OnEnable()
+    {
+        UpdateValues();
+    }
+
+    public void Init()
     {
         MoveabelOverlay.MoveabelOverlayCreated += (moveabelOverlay) => { this.currentOverlay = moveabelOverlay; };
 
@@ -52,7 +57,10 @@ public class OverlayPositioning : MonoBehaviour
 
         SetLookAt(lookAt.isOn);
         SetDragAndDrop(dragAndDrop.isOn);
+    }
 
+    private void UpdateValues()
+    {
         if (currentOverlay != null)
         {
             UpdateDistanceText(currentOverlay);
