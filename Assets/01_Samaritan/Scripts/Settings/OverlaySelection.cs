@@ -33,7 +33,7 @@ public class OverlaySelection : MonoBehaviour
 
     public void Init()
     {
-        MoveabelOverlay.MoveabelOverlayCreated += (moveabelOverlay) => { this.currentOverlay = moveabelOverlay; };
+        MoveabelOverlay.MoveabelOverlayCreated += SetMovabelOverlay;
 
         transparencySlider.WhileSliderHandleDown += ChangeTransparency;
         backGround1.onValueChanged.AddListener(SetBackground1);
@@ -41,6 +41,12 @@ public class OverlaySelection : MonoBehaviour
 
         SetDefaultBackground();
         SetDefaultOverlay();
+    }
+
+    private void SetMovabelOverlay(MoveabelOverlay moveabelOverlay)
+    {
+        currentOverlay = moveabelOverlay;
+        UpdateValues();
     }
 
     private void SetBackground2(bool isOn)
@@ -62,6 +68,10 @@ public class OverlaySelection : MonoBehaviour
     private void UpdateValues()
     {
         UpdateTransparencyText(transparencySlider.slider.value);
+        if (currentOverlay != null)
+        {
+            currentOverlay.Transparency = transparencySlider.slider.value;
+        }
     }
 
     private void SetDefaultBackground()

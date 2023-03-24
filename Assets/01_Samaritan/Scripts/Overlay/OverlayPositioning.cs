@@ -40,7 +40,7 @@ public class OverlayPositioning : MonoBehaviour
 
     public void Init()
     {
-        MoveabelOverlay.MoveabelOverlayCreated += (moveabelOverlay) => { this.currentOverlay = moveabelOverlay; };
+        MoveabelOverlay.MoveabelOverlayCreated += SetMovabelOverlay;
 
         distanceSlider.WhileSliderHandleDown += ChangeDistanceInMeter;
         scaleSlider.WhileSliderHandleDown += ChangeScale;
@@ -57,6 +57,14 @@ public class OverlayPositioning : MonoBehaviour
 
         SetLookAt(lookAt.isOn);
         SetDragAndDrop(dragAndDrop.isOn);
+    }
+
+    private void SetMovabelOverlay(MoveabelOverlay moveabelOverlay)
+    {
+        currentOverlay = moveabelOverlay;
+        SetLookAt(lookAt.isOn);
+        SetDragAndDrop(dragAndDrop.isOn);
+        UpdateValues();
     }
 
     private void UpdateValues()
