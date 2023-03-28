@@ -22,7 +22,9 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IEndDragHandler
             //rectTransform.Translate(eventData.delta / canvas.scaleFactor *2, Space.Self);
 
             //transform relative to the camera
-            var transformation = eventData.delta / canvas.scaleFactor * 2;
+            var distanceToCamera = Vector3.Distance(Camera.main.transform.position, this.transform.position);
+            var transformation = eventData.delta / canvas.scaleFactor * distanceToCamera;
+
             Vector3 cameraUp = Camera.main.transform.up;
             Vector3 cameraRight = Camera.main.transform.right;
             transform.Translate(cameraUp * transformation.y, Space.World);
