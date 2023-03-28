@@ -621,6 +621,11 @@ PrefabInstance:
       propertyPath: Background2
       value: 
       objectReference: {fileID: 2252496515185718500}
+    - target: {fileID: 2482620201629940151, guid: bb7deb461764e7e46934a610bfad552f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3072539422439649407, guid: bb7deb461764e7e46934a610bfad552f,
         type: 3}
       propertyPath: m_RootOrder
@@ -680,6 +685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HorizontOverlay 3D
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770866272599238689, guid: bb7deb461764e7e46934a610bfad552f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6584504452518405432, guid: bb7deb461764e7e46934a610bfad552f,
         type: 3}
