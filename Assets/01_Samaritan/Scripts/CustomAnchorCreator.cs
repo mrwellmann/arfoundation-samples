@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Unity.XR.CoreUtils;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.ARSubsystems;
 
@@ -56,6 +57,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
             if (m_AnchorManager.subsystem == null)
             {
                 enabled = false;
+                Logger.Log($"No active XRAnchorSubsystem is available, so {typeof(AnchorCreator).FullName} will not be enabled.");
                 Debug.LogWarning($"No active XRAnchorSubsystem is available, so {typeof(AnchorCreator).FullName} will not be enabled.");
             }
         }
@@ -121,8 +123,30 @@ namespace UnityEngine.XR.ARFoundation.Samples
             return anchor;
         }
 
+        protected bool HitScreenSpaceUi(Vector3 position)
+        {
+            //Set up the new Pointer Event
+            PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+            //Set the Pointer Event Position to pressed position
+            pointerEventData.position = position;
+
+            //Create a list of Raycast Results
+            List<RaycastResult> results = new List<RaycastResult>();
+            //Raycast to see if we hit any UI
+            EventSystem.current.RaycastAll(pointerEventData, results);
+
+            // ignore if we only hit world space UI
+            if (results.Count > 0 && results[0].distance > 0)
+                return false;
+
+            return results.Count > 0;
+        }
+
         protected override void OnPress(Vector3 position)
         {
+            if (HitScreenSpaceUi(position))
+                return;
+
             // Raycast against planes and feature points
             const TrackableType trackableTypes =
                 TrackableType.FeaturePoint |
