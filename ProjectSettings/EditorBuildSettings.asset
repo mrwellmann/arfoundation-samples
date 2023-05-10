@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01_Samaritan/Scenes/Bear Indicator/Samaritan Bear Indicator.unity
-    guid: 710411d8a1d39934eb47a35f603d6e5a
+    path: Assets/01_Samaritan/Scenes/Menu/Menu.unity
+    guid: 2979a80ee782a964c9c09b201e04cd44
   - enabled: 1
     path: Assets/01_Samaritan/Scenes/AR Overlays/Samaritan AR Overlays.unity
     guid: 7f00fc6ea87c61745995cf5b2814f99a
   - enabled: 1
-    path: Assets/01_Samaritan/Scenes/Menu/Samaritan Menu.unity
-    guid: 2979a80ee782a964c9c09b201e04cd44
+    path: Assets/01_Samaritan/Scenes/Bear Indicator/Samaritan Bear Indicator.unity
+    guid: 710411d8a1d39934eb47a35f603d6e5a
   - enabled: 1
     path: Assets/01_Samaritan/Scenes/Image Recognition/Samaritan Image Recognition.unity
     guid: 283e9e68ad35036449cc7f4904d2b7f9

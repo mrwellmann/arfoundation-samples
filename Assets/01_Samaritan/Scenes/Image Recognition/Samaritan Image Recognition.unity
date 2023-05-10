@@ -3979,7 +3979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df14c524135e994883b7f4ad196e01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlayImage: {fileID: 1380039939}
+  OverlayImage: {fileID: 1380039939}
+  CurrentOverlayType: 0
+  SetOverlayYear: 0
   fade: 0
   fill: 0
 --- !u!114 &1380039939
